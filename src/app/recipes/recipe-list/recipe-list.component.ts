@@ -9,12 +9,22 @@ import { Recipe } from '../recipes.model';
 export class RecipeListComponent implements OnInit {
   public recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'A Test Description',
-    'https://cdn.pixabay.com/photo/2012/06/08/16/09/heart-49576_960_720.jpg')
+    'https://c.pxhere.com/photos/54/0b/sandwich_meal_food_bread_lunch_ham_tomato-1373778.jpg!d')
   ];
+  public recipeName: string;
+  public recipeDescription: string;
+  public recipeURL: string;
+  public newRecipe = {} as Recipe;
 
   constructor() { }
 
   ngOnInit() {
+
+    console.log(this.recipes);
+    this.newRecipe.name = 'Next Recipe';
+    this.newRecipe.description = 'New Description';
+    this.newRecipe.imagePath = 'https://c.pxhere.com/images/1a/6c/93062072a86701990aa1f7d5843b-1420302.jpg!d';
+    this.recipes.push(this.newRecipe);
   }
 
 }
